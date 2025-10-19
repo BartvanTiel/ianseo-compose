@@ -34,7 +34,7 @@ ianseo-docker/
 
     Start the environment:
 
-    `docker compose up -d`
+    `docker-compose up -d`
 
 
     This will:
@@ -47,3 +47,7 @@ ianseo-docker/
 
 
 5. Open http://localhost in your browser.
+
+6. When setting up the database, rename the host from localhost to db.
+![alt text](image.png)
+When prompted, the default admin password is `root`
