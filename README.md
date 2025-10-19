@@ -10,8 +10,8 @@ It spins up two containers:
 # 🚀 Quick Start
 1. Clone the repository
 ```bash
-git clone https://github.com/BartvanTiel/ianseo-docker.git
-cd ianseo-docker
+git clone git@github.com:BartvanTiel/ianseo-compose.git.git
+cd ianseo-compose
 ```
 
 2. Download IANSEO
@@ -41,7 +41,7 @@ ianseo-docker/
 
     - Build the PHP/Apache image
 
-    - Start a MariaDB database
+    - Start a MySQL database
 
     - Mount the IANSEO app from your local folder
 
