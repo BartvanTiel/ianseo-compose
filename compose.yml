@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  web:
+    image: php:8.4-apache
+    container_name: ianseo_web
+    ports:
+      - "80:80"
+    volumes:
+      - ./ianseo:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    command: >
+      bash -c "
+        set -e &&
+        apt-get update &&
+        apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev libicu-dev libmagickwand-dev &&
+        docker-php-ext-configure gd --with-freetype --with-jpeg &&
+        docker-php-ext-install -j\$(nproc) gd intl mysqli &&
+        pecl install imagick &&
+        docker-php-ext-enable imagick &&
+        apache2-foreground
+      "
+
+  db:
+    image: mysql:lts
+    container_name: ianseo_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
