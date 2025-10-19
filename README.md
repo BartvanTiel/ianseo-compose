@@ -33,18 +33,18 @@ ianseo-docker/
 4. ▶️ Run the containers
 
     Start the environment:
-    
+
     `docker compose up -d`
-    
-    
+
+
     This will:
-    
+
     - Build the PHP/Apache image
-    
+
     - Start a MariaDB database
-    
+
     - Mount the IANSEO app from your local folder
 
 
-5. Open http://localhost/ianseo
+5. Open http://localhost
  in your browser.
